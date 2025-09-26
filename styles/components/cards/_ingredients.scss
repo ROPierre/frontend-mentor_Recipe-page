@@ -1,0 +1,8 @@
+@use "../../base/variables";
+@use "../../utils/mixins";
+
+.ingredients-list {
+    & ::marker {
+        color: variables.$brown-800;
+    }
+}

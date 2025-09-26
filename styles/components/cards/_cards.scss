@@ -1,0 +1,77 @@
+@use "../../base/variables";
+@use "../../utils/mixins";
+@use "./banners";
+@use "./descriptions";
+@use "./preparation";
+@use "./ingredients";
+@use "./nutritions";
+
+.card {
+    max-width: 42rem;
+    margin: 4rem auto;
+    background-color: variables.$white;
+    border-radius: 1.5rem;
+
+    .recipe {
+        padding: 0 2.5rem 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem 0;
+    }
+
+    .text {
+        @include mixins.text-preset-4;
+
+        color: variables.$stone-600;
+    }
+
+    .text strong {
+        @include mixins.text-preset-4(600);
+    }
+
+    .title {
+        @include mixins.text-preset-2;
+
+        margin-bottom: 1.5rem;
+        color: variables.$brown-800;
+    }
+
+    ul {
+        & ::marker {
+            font-size: 0.75rem;
+            vertical-align: middle;
+        }
+    }
+
+    ol {
+        & ::marker {
+            @include mixins.text-preset-4(bold);
+
+            color: variables.$brown-800;
+        }
+    }
+
+    li {
+        margin-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid variables.$stone-150;
+    }
+
+    @include mixins.respond-to(small) {
+        max-width: 100%;
+        height: fit-content;
+        margin: 0;
+        border-radius: 0rem;
+    }
+}

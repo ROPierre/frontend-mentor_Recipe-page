@@ -1,0 +1,11 @@
+@use "../../base/variables";
+@use "../../utils/mixins";
+
+.description {
+    &-title {
+        @include mixins.text-preset-1;
+
+        margin-bottom: 1.5rem;
+        color: variables.$stone-900;
+    }
+}

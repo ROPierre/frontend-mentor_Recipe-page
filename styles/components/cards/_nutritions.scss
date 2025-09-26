@@ -1,0 +1,40 @@
+@use "../../base/variables";
+@use "../../utils/mixins";
+
+.nutrition-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+
+    tr {
+        border-bottom: 1px solid variables.$stone-150;
+
+        &:last-child {
+            border: none;
+        }
+
+        td {
+            padding: 0.75rem 0;
+
+            &:first-child {
+                padding-left: 2rem;
+                @include mixins.text-preset-4;
+            }
+
+            &:last-child {
+                padding-right: 2rem;
+                color: variables.$brown-800;
+
+                @include mixins.text-preset-4(700);
+            }
+        }
+
+        &:first-child td {
+            margin-top: 0;
+        }
+
+        &:last-child td {
+            margin-bottom: 0;
+        }
+    }
+}

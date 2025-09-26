@@ -1,0 +1,16 @@
+@use "../../base/variables";
+@use "../../utils/mixins";
+
+.preparation {
+    padding: 1.5rem;
+
+    &-title {
+        @include mixins.text-preset-3;
+
+        padding-bottom: 1rem;
+    }
+    
+    &-title, & ::marker {
+        color: variables.$rose-800;
+    }
+}

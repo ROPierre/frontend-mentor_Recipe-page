@@ -1,0 +1,41 @@
+@use "../base/variables";
+
+@mixin text-preset-1 {
+    font-size: 2.5rem;
+    font-family: variables.$font-young;
+}
+
+@mixin text-preset-2 {
+    font-size: 1.75rem;
+    font-family: variables.$font-young;
+}
+
+@mixin text-preset-3 {
+    font-size: 1.25rem;
+    font-family: variables.$font-outfit;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+@mixin text-preset-4($weight: 400) {
+    font-size: 1rem;
+    font-family: variables.$font-outfit;
+    font-weight: $weight;
+    line-height: 150%;
+}
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == small {
+        @media (max-width: 37.5rem) {
+            @content;
+        }
+    } @else if $breakpoint == medium {
+        @media (max-width: 56.25rem) {
+            @content;
+        }
+    } @else if $breakpoint == large {
+        @media (max-width: 75rem) {
+            @content;
+        }
+    }
+}
